@@ -16,7 +16,7 @@ namespace Kinder
         {
             InitializeComponent();
             Bitmap img = new Bitmap(Application.StartupPath + @"\img\fondo.jpg");
-            this.BackgroundImage = img;
+            this.Background= img;
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
