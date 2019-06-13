@@ -1,0 +1,70 @@
+Use master;
+go
+
+create database Proyecto;
+go
+
+use Proyecto;
+go
+
+--Creacion de tablas
+
+Create Table Administradores(
+IDAdmin int identity(1,1) not null primary key,
+DNI int not null,
+Nombre varchar(100) not null,
+Apellidos varchar(100) not null,
+Sexo varchar(45) not null,
+Puesto varchar(100) not null,
+Edad int not null,
+Usuario varchar(100) not null,
+Pass varchar(100) not null
+)
+go
+
+Create Table Docentes(
+IDDocente int identity(1,1) not null primary key,
+DNI int not null,
+Nombre varchar(100) not null,
+Apellidos varchar(100) not null,
+Sexo varchar(45) not null,
+Edad int not null,
+Usuario varchar(100) not null,
+Pass varchar(100) not null
+)
+go
+
+Create Table Alumnos(
+IDAlumno int identity(1,1) not null primary key,
+Matricula int not null,
+Nombre varchar(100) not null,
+Apellidos varchar(100) not null, 
+Sexo varchar(45) not null,
+Edad int not null,
+Grado int not null,
+Grupo varchar(10) not null, 
+/*Usuario varchar(100) not null,
+Pass varchar(100) not null,*/
+IDDocente int references Docentes,
+C1 int,
+C2 int,
+C3 int
+)
+go
+
+Create Table Tutores(
+IDTutor int identity(1,1) not null primary key,
+Matricula int not null,
+Nombre varchar(45) not null,
+Apellidos varchar(45) not null,
+Sexo varchar(45) not null,
+Edad int not null,
+Usuario varchar(100) not null,
+Pass varchar(100) not null,
+IDAlumno int references Alumnos,
+C1 int,
+C2 int,
+C3 int
+)
+go
+
