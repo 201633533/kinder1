@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Kinder
 {
     public partial class DOCENTES : Form
     {
+        doc cmda = new doc();
         public DOCENTES()
         {
             InitializeComponent();
@@ -32,7 +34,7 @@ namespace Kinder
 
         private void DOCENTES_Load(object sender, EventArgs e)
         {
-
+            cmda.llenargrid(dataGridViewdoc);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -44,5 +46,19 @@ namespace Kinder
             //OCULTAMOS 
             Visible = false;
         }
+        class doc
+        {
+            MySqlConnection con = new MySqlConnection("server = 127.0.0.1; database=proyecto;Uid=root");
+
+            public void llenargrid(DataGridView grid)
+            {
+                MySqlCommand cn = new MySqlCommand("select * from proyecto.usuarios;", con);
+                MySqlDataAdapter da = new MySqlDataAdapter(cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                grid.DataSource = dt;
+            }
+        }
     }
+
 }
