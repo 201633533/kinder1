@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,9 +12,11 @@ using System.Windows.Forms;
 
 namespace Kinder
 {
+
     public partial class ASIGNAR_CALIFICACION : Form
     {
-        kar cmda = new kar();
+        asig cmda = new asig();
+
         public ASIGNAR_CALIFICACION()
         {
             InitializeComponent();
@@ -28,7 +32,7 @@ namespace Kinder
 
         private void ASIGNAR_CALIFICACION_Load(object sender, EventArgs e)
         {
-
+            cmda.llenargrid(dataGridViewCALI);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -48,30 +52,44 @@ namespace Kinder
             MySqlCommand codigo = new MySqlCommand();
             MySqlConnection conectanos = new MySqlConnection();
             codigo.Connection = conectar;
-            codigo.CommandText = ("select * from kardex where Matricula = '" + textBoxmatricula.Text + "'");
+            codigo.CommandText = ("select * from usuarios where matricula = '" + textBoxmatricula.Text + "'");
             MySqlDataReader leer = codigo.ExecuteReader();
             if (leer.Read() == true)
             {
-                textBoxalumno.Text = leer["nombre"].ToString();
+                textBoxalumno.Text = leer["nombrecompleto"].ToString();
 
-               
+
             }
 
             else
             {
                 textBoxalumno.Text = "";
 
-                
+
             }
 
             conectar.Close();
 
         }
 
-        private void kardex_Load(object sender, EventArgs e)
+       
+
+        private void dataGridViewCALI_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            cmda.llenargrid(dataGridView1KAR);
+
         }
-    }
+        class asig
+        {
+            MySqlConnection con = new MySqlConnection("server = 127.0.0.1; database=proyecto;Uid=root");
+
+            public void llenargrid(DataGridView grid)
+            {
+                MySqlCommand cn = new MySqlCommand("select * from proyecto.asigCalificacion;", con);
+                MySqlDataAdapter da = new MySqlDataAdapter(cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                grid.DataSource = dt;
+            }
+        }
     }
 }
