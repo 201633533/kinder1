@@ -48,28 +48,20 @@ namespace Kinder
             MySqlCommand codigo = new MySqlCommand();
             MySqlConnection conectanos = new MySqlConnection();
             codigo.Connection = conectar;
-            codigo.CommandText = ("select * from kardex where Matricula = '" + textBox1MATRICULA.Text + "'");
+            codigo.CommandText = ("select * from kardex where Matricula = '" + textBoxmatricula.Text + "'");
             MySqlDataReader leer = codigo.ExecuteReader();
             if (leer.Read() == true)
             {
-                textBox1NAME.Text = leer["nombre_completo"].ToString();
+                textBoxalumno.Text = leer["nombre"].ToString();
 
-                textBox2CARRERA.Text = leer["carrera"].ToString();
-                textBox4PROMEDIO.Text = leer["promedio"].ToString();
-                textBox5CREDITOS.Text = leer["creditos"].ToString();
-                textBox6CREDITOSCUB.Text = leer["creditos_cubiertos"].ToString();
-                textBox7FECHA.Text = leer["Fecha"].ToString();
+               
             }
 
             else
             {
-                textBox1NAME.Text = "";
+                textBoxalumno.Text = "";
 
-                textBox2CARRERA.Text = "";
-                textBox4PROMEDIO.Text = "";
-                textBox5CREDITOS.Text = "";
-                textBox6CREDITOSCUB.Text = "";
-                textBox7FECHA.Text = "";
+                
             }
 
             conectar.Close();
