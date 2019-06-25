@@ -19,3 +19,9 @@ C:\Users\Administrador\Desktop\Elizabeth\Proyecto kinder\Kinder\Kinder\obj\Debug
 C:\Users\Administrador\Desktop\Elizabeth\Proyecto kinder\Kinder\Kinder\obj\Debug\Kinder.INICIO_SESION_TUTOR.resources
 C:\Users\Administrador\Desktop\Elizabeth\Proyecto kinder\Kinder\Kinder\obj\Debug\Kinder.LOGIN.resources
 C:\Users\Administrador\Desktop\Elizabeth\Proyecto kinder\Kinder\Kinder\obj\Debug\Kinder.TUTORES.resources
+C:\Users\victoria\Source\Repos\kinder1\Kinder\obj\Debug\Kinder.csprojAssemblyReference.cache
+C:\Users\victoria\Source\Repos\kinder1\Kinder\obj\Debug\Kinder.exe
+C:\Users\victoria\Source\Repos\kinder1\Kinder\obj\Debug\Kinder.pdb
+C:\Users\victoria\Documents\GitHub\kinder1\Kinder\obj\Debug\Kinder.csprojAssemblyReference.cache
+C:\Users\victoria\Documents\GitHub\kinder1\Kinder\obj\Debug\Kinder.exe
+C:\Users\victoria\Documents\GitHub\kinder1\Kinder\obj\Debug\Kinder.pdb
