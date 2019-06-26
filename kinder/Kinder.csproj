@@ -114,12 +114,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TUTORES.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TUTORES.Designer.cs">
-      <DependentUpon>TUTORES.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ADMINISTRADORES.resx">
       <DependentUpon>ADMINISTRADORES.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,9 +157,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TUTORES.resx">
-      <DependentUpon>TUTORES.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
